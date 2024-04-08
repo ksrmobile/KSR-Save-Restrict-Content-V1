@@ -67,8 +67,8 @@ def progress(current, total, message, type):
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
     buttons = [
         [InlineKeyboardButton("🤖 BOT MADE BY KSR 🇰🇭", url="https://t.me/ksr_369")],
-        [InlineKeyboardButton("Channel Update", callback_data="https://t.me/ksr_tool")],  # Add more buttons here
-        [InlineKeyboardButton("Donation", callback_data="https://t.me/donationseatv/2")],
+        [InlineKeyboardButton("Channel Update", url="https://t.me/ksr_tool")],  # Add more buttons here
+        [InlineKeyboardButton("Donation", url="https://t.me/donationseatv/2")],
         # Add more buttons as needed
     ]
     bot.send_message(
