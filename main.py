@@ -65,9 +65,19 @@ def progress(current, total, message, type):
 # start command
 @bot.on_message(filters.command(["start"]))
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
-	bot.send_message(message.chat.id, f"**__👋 Hi** **{message.from_user.mention}**, **I am Save Restricted Bot, Which is Deploy by KSR , I can send you restricted content by Send me post link__**\n\n{USAGE}",
-	reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🤖BOT MADE BY KSR 🇰🇭", url="https://t.me/ksr_369")]]),
-	reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("Donation Bot", url="https://t.me/donationseatv")]]), reply_to_message_id=message.id)
+    buttons = [
+        [InlineKeyboardButton("🤖 BOT MADE BY KSR 🇰🇭", url="https://t.me/ksr_369")],
+        [InlineKeyboardButton("Channel Update", callback_data="https://t.me/ksr_tool")],  # Add more buttons here
+        [InlineKeyboardButton("Donation", callback_data="https://t.me/donationseatv/2")],
+        # Add more buttons as needed
+    ]
+    bot.send_message(
+        message.chat.id,
+        f"**👋 Hi {message.from_user.mention}, I am Save Restricted Bot, which is Deployed by KSR. I can send you restricted content by sending me a post link.**\n\n{USAGE}",
+        reply_markup=InlineKeyboardMarkup(buttons),
+        reply_to_message_id=message.id
+    )
+
 
 
 
